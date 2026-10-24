@@ -21,12 +21,15 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       
-      {/* 1. HEADER NAVIGATION (Rotary VGC Glassmorphic Style) */}
-      <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[72px]">
-          <Link href="/" className="font-serif font-black text-lg sm:text-xl text-white tracking-tight hover:text-amber-400 transition">
-            RACO <span className="text-amber-500">Child &amp; Rural Care</span>
-          </Link>
+      {/* In your Header Navigation */}
+<nav className="hidden md:flex items-center gap-7 font-bold text-xs uppercase tracking-wider text-slate-300">
+  <Link href="/" className="hover:text-amber-400 transition">Home</Link>
+  <Link href="/about" className="hover:text-amber-400 transition">About Us</Link>
+  <Link href="/programs" className="hover:text-amber-400 transition">Programmes</Link>
+  <Link href="/get-involved" className="hover:text-amber-400 transition">Get Involved</Link>
+  <Link href="/contact" className="hover:text-amber-400 transition">Contact</Link>
+</nav>
+
           
           <nav className="hidden md:flex items-center gap-7 font-bold text-xs uppercase tracking-wider text-slate-300">
             <Link href="#home" className="hover:text-amber-400 transition">Home</Link>
