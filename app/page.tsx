@@ -8,249 +8,287 @@ import {
   Mail, 
   ArrowRight, 
   Sparkles,
-  ShieldCheck,
+  AlertCircle,
+  CheckCircle2,
+  Phone,
   Building2,
-  Phone
+  ShieldCheck,
+  Stethoscope,
+  Briefcase
 } from 'lucide-react';
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "RACO Child and Rural Care Initiative",
-  description: "A faith-based care and protection center for orphans, vulnerable, and displaced poor children in rural communities.",
-  alternates: {
-    canonical: "https://racochildinitiative.org/",
-  },
-};
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#f6f1e7] text-[#1d2433] selection:bg-[#c8553d] selection:text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       
-      {/* HEADER / NAVIGATION */}
-      <header className="sticky top-0 z-30 bg-[#f6f1e7]/90 backdrop-blur-md border-b border-[#ddd3bf]">
-        <div className="max-w-6xl mx-auto px-5 flex items-center justify-between min-h-[70px]">
-          <Link href="#top" className="font-serif font-bold text-lg text-[#1d2433] hover:opacity-80 transition">
-            RACO Child &amp; Rural Care
+      {/* 1. HEADER NAVIGATION (Rotary VGC Glassmorphic Style) */}
+      <header className="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[72px]">
+          <Link href="/" className="font-serif font-black text-lg sm:text-xl text-white tracking-tight hover:text-amber-400 transition">
+            RACO <span className="text-amber-500">Child &amp; Rural Care</span>
           </Link>
           
-          <nav className="hidden md:flex items-center gap-6 font-semibold text-sm text-[#566074]">
-            <Link href="#home" className="hover:text-[#1d2433] transition">Home</Link>
-            <Link href="#about" className="hover:text-[#1d2433] transition">About</Link>
-            <Link href="#programmes" className="hover:text-[#1d2433] transition">Programmes</Link>
-            <Link href="#get-involved" className="hover:text-[#1d2433] transition">Get Involved</Link>
-            <Link href="#contact" className="hover:text-[#1d2433] transition">Contact</Link>
+          <nav className="hidden md:flex items-center gap-7 font-bold text-xs uppercase tracking-wider text-slate-300">
+            <Link href="#home" className="hover:text-amber-400 transition">Home</Link>
+            <Link href="#about" className="hover:text-amber-400 transition">About</Link>
+            <Link href="#initiatives" className="hover:text-amber-400 transition">Areas of Focus</Link>
+            <Link href="#get-involved" className="hover:text-amber-400 transition">Get Involved</Link>
+            <Link href="#contact" className="hover:text-amber-400 transition">Contact</Link>
           </nav>
 
           <Link 
             href="#donate" 
-            className="bg-[#c8553d] hover:bg-[#b04833] text-white font-bold px-6 py-2.5 rounded-full text-sm transition shadow-sm"
+            className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center gap-1.5"
           >
-            Donate
+            <Heart className="w-3.5 h-3.5 fill-slate-950" /> Donate Now
           </Link>
         </div>
       </header>
 
-      <main id="top" className="flex-grow">
+      <main id="home" className="flex-grow">
         
-        {/* HERO SECTION */}
-        <section id="home" className="bg-[#23304f] text-[#f6f1e7] py-20 lg:py-28 px-5 relative overflow-hidden">
-          <div className="max-w-4xl mx-auto space-y-6 relative z-10">
-            <span className="bg-white/10 text-[#f6f1e7] font-semibold text-xs tracking-widest uppercase px-3.5 py-1.5 rounded-full border border-white/20 inline-flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#e8836b]" /> Faith-Based Care &amp; Protection Center
+        {/* 2. HERO BANNER (Rotary VGC High-Impact Style) */}
+        <section className="bg-slate-950 text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.18),transparent_65%)] pointer-events-none"></div>
+          
+          <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+            <span className="bg-amber-500/10 text-amber-400 font-extrabold text-[10px] sm:text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-amber-500/25 inline-flex items-center gap-1.5 shadow-inner">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Faith-Based Care &amp; Protection Center
             </span>
 
-            <h1 className="text-4xl sm:text-6xl font-serif font-bold leading-tight max-w-2xl">
-              Every child deserves a home, a meal and a future.
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
+              Every child deserves a home, a meal and a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">future.</span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-              RACO Child and Rural Care Initiative looks after children and supports rural families from our base in Ibeju-Lekki, Lagos[span_0](start_span)[span_0](end_span).
+            <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              RACO Child and Rural Care Initiative provides 100% free education, daily hot meals, shelter, and community care for orphans and rural families in Nigeria[span_23](start_span)[span_23](end_span).
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
               <Link 
                 href="#get-involved" 
-                className="bg-[#c8553d] hover:bg-[#b04833] text-white font-bold px-7 py-3.5 rounded-full text-sm transition shadow-md flex items-center gap-2"
+                className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2"
               >
-                Volunteer with us
+                Volunteer With Us <ArrowRight className="w-4 h-4" />
               </Link>
               <Link 
                 href="#donate" 
-                className="bg-transparent hover:bg-white/10 text-white border-2 border-white/30 font-bold px-7 py-3.5 rounded-full text-sm transition flex items-center gap-2"
+                className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold px-7 py-3.5 rounded-xl text-xs uppercase tracking-wider transition border border-slate-800 flex items-center justify-center gap-2"
               >
-                Give today
+                <Heart className="w-4 h-4 text-amber-400" /> Give Today
               </Link>
             </div>
           </div>
         </section>
 
-        {/* FACTS RIBBON */}
-        <section className="bg-[#fffaf0] border-b border-[#ddd3bf] py-6 px-5">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div>
-              <b className="font-serif text-lg text-[#1d2433]">Ibeju-Lekki, Lagos</b>
-              <span className="text-[#566074] text-xs">Where we are based[span_1](start_span)[span_1](end_span)</span>
+        {/* 3. IMPACT STATS RIBBON (Rotary VGC Metric Counter Bar) */}
+        <section className="bg-amber-500 text-slate-950 py-8 px-4">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-1">
+              <h3 className="text-2xl sm:text-3xl font-black">2003</h3>
+              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">Commission Established</p>
             </div>
-            <div>
-              <b className="font-serif text-lg text-[#1d2433]">Child care</b>
-              <span className="text-[#566074] text-xs">A safe home and daily support[span_2](start_span)[span_2](end_span)</span>
+            <div className="space-y-1">
+              <h3 className="text-2xl sm:text-3xl font-black">2007</h3>
+              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">RACO Schools Launched</p>
             </div>
-            <div>
-              <b className="font-serif text-lg text-[#1d2433]">Rural outreach</b>
-              <span className="text-[#566074] text-xs">Reaching families beyond the city[span_3](start_span)[span_3](end_span)</span>
+            <div className="space-y-1">
+              <h3 className="text-2xl sm:text-3xl font-black">100%</h3>
+              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">Free Tuition &amp; Lunch</p>
             </div>
-            <div>
-              <b className="font-serif text-lg text-[#1d2433]">Open to all</b>
-              <span className="text-[#566074] text-xs">Donors, volunteers and partners[span_4](start_span)[span_4](end_span)</span>
+            <div className="space-y-1">
+              <h3 className="text-2xl sm:text-3xl font-black">3,000+</h3>
+              <p className="text-[10px] font-bold uppercase tracking-wider opacity-90">Target Beneficiaries</p>
             </div>
           </div>
         </section>
 
-        {/* WELCOME / ABOUT TEASER */}
-        <section id="about" className="py-20 px-5">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1d2433]">Welcome to RACO</h2>
-              <p className="text-[#566074] text-base leading-relaxed">
-                RACO Child and Rural Care Initiative is a charity that cares for children and strengthens the rural communities around them[span_5](start_span)[span_5](end_span).
-              </p>
-              <p className="text-[#1d2433] leading-relaxed text-sm sm:text-base">
-                We provide shelter, meals and schooling support, and we work with neighbours, volunteers and donors who want to see children grow up safe and hopeful[span_6](start_span)[span_6](end_span).
-              </p>
-              <p className="text-[#1d2433] leading-relaxed text-sm sm:text-base">
-                Every programme starts with one question: what does this child need to thrive? Our answers shape the way we teach, feed and care[span_7](start_span)[span_7](end_span).
-              </p>
-              <div>
-                <Link href="#programmes" className="inline-block bg-[#c8553d] hover:bg-[#b04833] text-white font-bold px-6 py-3 rounded-full text-sm transition">
-                  What we are doing
+        {/* 4. ACTIVE APPEAL BANNER (Rotary Priority Campaigns) */}
+        <section className="py-10 bg-slate-100 border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-amber-500/30 shadow-md flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex-shrink-0 flex items-center justify-center font-black shadow-md">
+                  <AlertCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-extrabold text-amber-600 uppercase tracking-widest bg-amber-50 px-3 py-1 rounded-full border border-amber-500/20">
+                    Active Appeal • ₦27,000,000 Target
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-2 mb-1">
+                    Back-to-School Support &amp; Material Fund
+                  </h3>
+                  <p className="text-slate-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                    Raising essential funds for tuition, textbooks, uniforms, and daily school meals for hundreds of orphaned and vulnerable children[span_24](start_span)[span_24](end_span).
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 w-full lg:w-auto shrink-0">
+                <Link
+                  href="#donate"
+                  className="w-full lg:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition text-center shadow-md flex items-center justify-center gap-1.5"
+                >
+                  <Heart className="w-3.5 h-3.5 fill-slate-950" /> Donate Now
                 </Link>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div className="bg-[#23304f] text-[#f6f1e7] rounded-2xl p-8 shadow-lg relative">
-              <p className="font-serif text-xl sm:text-2xl leading-snug mb-4">
-                &ldquo;When a community stands behind a child, that child stands taller[span_8](start_span)[span_8](end_span).&rdquo;
+        {/* 5. ABOUT & MISSION SPLIT (Rotary VGC Welcome Section) */}
+        <section id="about" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-5">
+              <span className="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-50 border border-amber-200/60 px-3.5 py-1.5 rounded-full inline-block">
+                Welcome to RACO
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                Rooted in Faith, Driven by Compassion
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                RACO Child and Rural Care Initiative is a charity that cares for children and strengthens the rural communities around them[span_25](start_span)[span_25](end_span).
               </p>
-              <span className="text-sm opacity-80 font-semibold">— The RACO family[span_9](start_span)[span_9](end_span)</span>
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                We provide shelter, meals, and schooling support in partnership with neighbors, volunteers, and donors who want to see children grow up safe and hopeful[span_26](start_span)[span_26](end_span).
+              </p>
+              
+              <div className="space-y-2.5 pt-2">
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 font-medium">Free textbooks, uniforms, writing materials, and daily hot meals[span_27](start_span)[span_27](end_span).</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 font-medium">Holistic care covering shelter, healthcare, and emotional stability[span_28](start_span)[span_28](end_span).</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-700 font-medium">Empowerment initiatives for rural widows and youth vocational training[span_29](start_span)[span_29](end_span).</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-950 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden border border-slate-800">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+              <p className="font-serif text-xl sm:text-2xl leading-relaxed mb-6 text-slate-100">
+                &ldquo;When a community stands behind a child, that child stands taller[span_30](start_span)[span_30](end_span).&rdquo;
+              </p>
+              <div className="border-t border-slate-800 pt-4 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-widest text-amber-400">— The RACO Family[span_31](start_span)[span_31](end_span)</span>
+                <ShieldCheck className="w-6 h-6 text-amber-500" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* PROGRAMMES */}
-        <section id="programmes" className="bg-[#fffaf0] py-20 px-5 border-y border-[#ddd3bf]">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1d2433]">Programmes that change daily life</h2>
-              <p className="text-[#566074] mt-2 text-base">Three ways we put care into action[span_10](start_span)[span_10](end_span).</p>
+        {/* 6. CORE AREAS OF FOCUS GRID (Rotary VGC Focus Areas Style) */}
+        <section id="initiatives" className="bg-slate-100/80 py-20 border-y border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <span className="bg-amber-500/10 text-amber-600 font-bold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full border border-amber-500/20 inline-block mb-3">
+                Programmes That Change Daily Life
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">Core Areas of Focus</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <article className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+              {/* Pillar 1 */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-bold text-[#c8553d] uppercase tracking-wider block mb-2">Education</span>
-                  <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Back to School</h3>
-                  <p className="text-[#566074] text-sm leading-relaxed">
-                    We support students with school fees, supplies and encouragement, and celebrate their progress in our student showcase[span_11](start_span)[span_11](end_span).
+                  <div className="w-12 h-12 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                    <GraduationCap className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-2.5 py-1 rounded">Education[span_32](start_span)[span_32](end_span)</span>
+                  <h3 className="text-xl font-extrabold text-slate-900 mt-2 mb-3">Back to School</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                    Supporting students with school fees, textbooks, uniforms, and daily encouragement[span_33](start_span)[span_33](end_span).
                   </p>
                 </div>
-              </article>
+              </div>
 
-              <article className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+              {/* Pillar 2 */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-bold text-[#c8553d] uppercase tracking-wider block mb-2">Nutrition</span>
-                  <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Feed a Child</h3>
-                  <p className="text-[#566074] text-sm leading-relaxed">
-                    Regular, balanced meals so children can grow, concentrate in class and simply be children[span_12](start_span)[span_12](end_span).
+                  <div className="w-12 h-12 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                    <Utensils className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-2.5 py-1 rounded">Nutrition[span_34](start_span)[span_34](end_span)</span>
+                  <h3 className="text-xl font-extrabold text-slate-900 mt-2 mb-3">Feed a Child</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                    Regular, balanced meals so children can grow, concentrate in class, and thrive[span_35](start_span)[span_35](end_span).
                   </p>
                 </div>
-              </article>
+              </div>
 
-              <article className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+              {/* Pillar 3 */}
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-bold text-[#c8553d] uppercase tracking-wider block mb-2">Community</span>
-                  <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Rural Care</h3>
-                  <p className="text-[#566074] text-sm leading-relaxed">
-                    Outreach that brings support to families in rural communities who are often missed by other help[span_13](start_span)[span_13](end_span).
+                  <div className="w-12 h-12 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                    <Stethoscope className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-bold text-amber-600 uppercase tracking-widest bg-amber-50 px-2.5 py-1 rounded">Healthcare</span>
+                  <h3 className="text-xl font-extrabold text-slate-900 mt-2 mb-3">RACO Life Centre Clinic</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                    Free medical consultations, health screenings, and essential medications for rural families.
                   </p>
                 </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* WHAT WE DO */}
-        <section className="py-20 px-5">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1d2433]">What we do</h2>
-              <p className="text-[#566074] mt-2 text-base">Our work covers the basics a child needs most[span_14](start_span)[span_14](end_span).</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">A safe home</h3>
-                <p className="text-[#566074] text-sm">A caring environment where children feel protected and known[span_15](start_span)[span_15](end_span).</p>
-              </div>
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">Learning</h3>
-                <p className="text-[#566074] text-sm">Help with school costs and a steady push toward their goals[span_16](start_span)[span_16](end_span).</p>
-              </div>
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">Food and health</h3>
-                <p className="text-[#566074] text-sm">Nourishing meals and attention to everyday wellbeing[span_17](start_span)[span_17](end_span).</p>
-              </div>
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">Rural families</h3>
-                <p className="text-[#566074] text-sm">Practical support for communities that need it most[span_18](start_span)[span_18](end_span).</p>
-              </div>
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">Trusted leadership</h3>
-                <p className="text-[#566074] text-sm">A Board of Trustees that keeps our work accountable[span_19](start_span)[span_19](end_span).</p>
-              </div>
-              <div className="bg-[#fffaf0] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-[#1d2433] mb-2">Open doors</h3>
-                <p className="text-[#566074] text-sm">Volunteers, donors and partners are always welcome[span_20](start_span)[span_20](end_span).</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* GET INVOLVED */}
-        <section id="get-involved" className="bg-[#fffaf0] py-20 px-5 border-y border-[#ddd3bf]">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#1d2433]">Ways to get involved</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Volunteer</h3>
-                <p className="text-[#566074] text-sm">Give your time to tutoring, events or outreach days[span_21](start_span)[span_21](end_span).</p>
-              </div>
-              <div className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Partner</h3>
-                <p className="text-[#566074] text-sm">Companies and organisations can sponsor programmes or donate supplies[span_22](start_span)[span_22](end_span).</p>
-              </div>
-              <div className="bg-[#f6f1e7] border border-[#ddd3bf] rounded-2xl p-6 shadow-sm">
-                <h3 className="font-serif text-xl font-bold text-[#1d2433] mb-2">Spread the word</h3>
-                <p className="text-[#566074] text-sm">Follow, share and tell people about our work[span_23](start_span)[span_23](end_span).</p>
-              </div>
+        {/* 7. WAYS TO GET INVOLVED (Rotary VGC Engagement Grid) */}
+        <section id="get-involved" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900">Ways to Get Involved</h2>
+            <p className="text-slate-600 text-xs sm:text-sm mt-2">Every level of support transforms a rural child's future[span_36](start_span)[span_36](end_span).</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+              <h3 className="font-extrabold text-lg text-slate-900 mb-2">Volunteer[span_37](start_span)[span_37](end_span)</h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Give your time to tutoring, event planning, or rural outreach field trips[span_38](start_span)[span_38](end_span).
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+              <h3 className="font-extrabold text-lg text-slate-900 mb-2">Partner[span_39](start_span)[span_39](end_span)</h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Companies and corporate sponsors can sponsor school programs or donate supplies[span_40](start_span)[span_40](end_span).
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+              <h3 className="font-extrabold text-lg text-slate-900 mb-2">Spread the Word[span_41](start_span)[span_41](end_span)</h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Share our mission across your networks to help bring help to rural communities[span_42](start_span)[span_42](end_span).
+              </p>
             </div>
           </div>
         </section>
 
-        {/* DONATE / CTA SECTION */}
-        <section id="donate" className="py-20 px-5">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-[#23304f] text-[#f6f1e7] rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
-              <div className="space-y-3">
-                <h2 className="text-3xl font-serif font-bold">Give a child a brighter tomorrow</h2>
-                <p className="text-slate-300 text-sm max-w-xl leading-relaxed">
-                  We accept bank transfers to FCMB, Polaris Bank and GTBank. Email us and we will send you the account details for your preferred bank[span_24](start_span)[span_24](end_span).
-                </p>
-              </div>
+        {/* 8. DONATION CTA */}
+        <section id="donate" className="bg-slate-950 text-white py-20 px-4 text-center relative overflow-hidden">
+          <div className="max-w-3xl mx-auto space-y-5 relative z-10">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Give a child a brighter tomorrow[span_43](start_span)[span_43](end_span)
+            </h2>
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+              We accept bank transfers to FCMB, Polaris Bank, and GTBank. Email us and we will send you the official account details[span_44](start_span)[span_44](end_span).
+            </p>
+            <div className="pt-2">
               <a 
                 href="mailto:info@racochildinitiative.org?subject=Donation%20details"
-                className="bg-[#c8553d] hover:bg-[#b04833] text-white font-bold px-8 py-4 rounded-full text-sm transition shadow-lg whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold px-8 py-4 rounded-xl text-xs uppercase tracking-wider transition shadow-xl"
               >
-                Request donation details
+                Request Donation Details[span_45](start_span)[span_45](end_span)
               </a>
             </div>
           </div>
@@ -258,39 +296,45 @@ export default function Home() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer id="contact" className="bg-[#23304f] text-[#f6f1e7] py-16 px-5 border-t border-white/10">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* 9. FOOTER DIRECTORY (Rotary VGC Global Footer Style) */}
+      <footer id="contact" className="bg-slate-950 text-white py-16 px-4 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-3">
-            <h3 className="font-serif font-bold text-base">RACO Child and Rural Care Initiative</h3>
-            <p className="text-sm opacity-80 leading-relaxed">33 Taiwo Adebambo Street, Ibeju-Lekki, Lagos, Nigeria[span_25](start_span)[span_25](end_span).</p>
+            <h3 className="font-serif font-black text-base text-amber-400">RACO Child and Rural Care Initiative[span_46](start_span)[span_46](end_span)</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              33 Taiwo Adebambo Street, Ibeju-Lekki, Lagos, Nigeria[span_47](start_span)[span_47](end_span).
+            </p>
             <a 
               href="https://www.google.com/maps/search/?api=1&amp;query=33+Taiwo+Adebambo+Street+Ibeju-Lekki+Lagos" 
               target="_blank" 
-              rel="noopener" 
-              className="text-xs text-[#e8836b] underline block pt-1 font-semibold"
+              rel="noopener font-semibold"
+              className="text-xs text-amber-400 hover:underline block pt-1"
             >
-              View on Google Maps[span_26](start_span)[span_26](end_span)
+              View on Google Maps[span_48](start_span)[span_48](end_span)
             </a>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="font-serif font-bold text-base">Contact</h3>
-            <a href="mailto:info@racochildinitiative.org" className="text-sm opacity-80 hover:opacity-100 block">info@racochildinitiative.org[span_27](start_span)[span_27](end_span)</a>
-            <a href="mailto:outreach@racochildinitiative.org" className="text-sm opacity-80 hover:opacity-100 block">outreach@racochildinitiative.org[span_28](start_span)[span_28](end_span)</a>
+           <div className="space-y-2">
+            <h3 className="font-extrabold text-sm uppercase tracking-wider text-slate-200">Contact[span_49](start_span)[span_49](end_span)</h3>
+            <a href="mailto:info@racochildinitiative.org" className="text-xs text-slate-400 hover:text-white block">
+              info@racochildinitiative.org[span_50](start_span)[span_50](end_span)
+            </a>
+            <a href="mailto:outreach@racochildinitiative.org" className="text-xs text-slate-400 hover:text-white block">
+              outreach@racochildinitiative.org[span_51](start_span)[span_51](end_span)
+            </a>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="font-serif font-bold text-base">Explore</h3>
-            <Link href="#about" className="text-sm opacity-80 hover:opacity-100 block">About</Link>
-            <Link href="#programmes" className="text-sm opacity-80 hover:opacity-100 block">Programmes</Link>
-            <Link href="#get-involved" className="text-sm opacity-80 hover:opacity-100 block">Get Involved</Link>
-            <Link href="#donate" className="text-sm opacity-80 hover:opacity-100 block">Donate</Link>
+          <div className="space-y-2">
+            <h3 className="font-extrabold text-sm uppercase tracking-wider text-slate-200">Explore[span_52](start_span)[span_52](end_span)</h3>
+            <Link href="#about" className="text-xs text-slate-400 hover:text-white block">About[span_53](start_span)[span_53](end_span)</Link>
+            <Link href="#initiatives" className="text-xs text-slate-400 hover:text-white block">Programmes[span_54](start_span)[span_54](end_span)</Link>
+            <Link href="#get-involved" className="text-xs text-slate-400 hover:text-white block">Get Involved[span_55](start_span)[span_55](end_span)</Link>
+            <Link href="#donate" className="text-xs text-slate-400 hover:text-white block">Donate[span_56](start_span)[span_56](end_span)</Link>
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto pt-10 mt-10 border-t border-white/10 text-xs opacity-60">
-          © 2026 RACO Child and Rural Care Initiative. All rights reserved[span_29](start_span)[span_29](end_span).
+        <div className="max-w-7xl mx-auto pt-8 mt-10 border-t border-slate-900 text-center sm:text-left text-[11px] text-slate-500">
+          © 2026 RACO Child and Rural Care Initiative. All rights reserved[span_57](start_span)[span_57](end_span).
         </div>
       </footer>
 
